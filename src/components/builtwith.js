@@ -14,7 +14,18 @@ import SIcon from '../images/nails-icon.png'
 const BWContainer = styled.div `
     /* Styles for small screens */
     ${media.lessThan("medium")`
-    	margin-top: 2em;
+    	position: relative;
+    	display: block;
+    	padding: .5em;
+    	width: 100%;
+    	height: 200px;
+    	background-color: #4bffa5;
+    	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    	h6 {
+    		color: #040f3d;
+    		text-transform: uppercase;
+    	}
     `}
 
     /* Styles for medium screens */
@@ -74,7 +85,6 @@ const SCContainer = styled.div `
     	position: relative;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
 		text-align: center;
     `}
 
@@ -94,7 +104,6 @@ const GContainer = styled.div `
     	position: relative;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
 		text-align: center;
     `}
 
@@ -115,7 +124,6 @@ const RContainer = styled.div `
     	position: relative;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
 		text-align: center;
     `}
 
@@ -136,7 +144,6 @@ const LContainer = styled.div `
     	position: relative;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
 		text-align: center;
 
 		h6 {
