@@ -23,7 +23,7 @@ const LandingContainer = styled.div `
     /* Styles for small screens */
     ${media.lessThan("medium")`
         position: relative;
-        height: 100%;
+        height: 1100px;
         width: 100%;
     `}
 
@@ -145,7 +145,7 @@ const HalfHalf = styled.div `
     /* Styles for small screens */
     ${media.lessThan("medium")`
         position: relative;
-        height: 600px;
+        height: 700px;
         width: 100%;
         padding: 1em;
 
@@ -212,7 +212,7 @@ const Landing = () => (
         <Fade delay={6800}>
             <p>
                 I decided to build my portfolio using <a href="https://gatsbyjs.org">GatsbyJS</a>.<br></br>
-                Allowing me to implement and leverage the powers of <a href="https://reactjs.org">ReactJS</a> and other great packages. <br></br>
+                Allowing me to implement and leverage the powers of <a href="https://reactjs.org">ReactJS</a> and other great packages. <br></br><br></br>
                 All while maintaning a fast, responsive and simple layout.
             </p>
         </Fade>
