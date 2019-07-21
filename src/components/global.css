@@ -1,5 +1,19 @@
+/* ../src/components/global.css
+ * Global CSS Properties 
+ * All global properties here.
+ * You will also find css 'fix' classes here.
+ * as Styled-Components & Styled-Media-Query can be
+ * A little bit finnicky sometimes.
+ */
+
 * {
 	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	color: #040f3d;
 }
 
 p {
@@ -9,4 +23,17 @@ p {
 a {
 	color: #4bffa5;
 	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+.grid-fix {
+    grid-row: 2/2;
+    grid-column: 2 / 3;
+    }
+
+.grid-fix a:hover {
+	cursor: default;
 }
