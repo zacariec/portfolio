@@ -36,9 +36,12 @@ const LandingContainer = styled.div `
     
     /* Styles for large screens */
     ${media.greaterThan("large")`
+        position: relative;
+        display: flex;
+        flex-direction: row;
         height: 100%;
         width: 100%;
-        background-color: green;
+        flex-wrap: wrap;
     `}
 `;
 
@@ -78,76 +81,74 @@ const Half = styled.div `
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
+        position: relative;
+        display: flex;
+        overflow-x: hidden;
+        justify-content: flex-start;
+        align-self: center;
+        align-items: center;
+        height: 400px;
+        width: 50%;
+        background-color: #4bffa5;
+        z-index: 1;
+
+        h1 {
+            font-size: 12em;
+            color: #040f3d;
+        }
+
+        h2 {
+            display: none;
+        }
 
     `}
 `;
 
-const Button = styled.button `
+const WhiteHalf = styled.div `
 
     /* Styles for small screens */
     ${media.lessThan("medium")`
         display: none;
 
-        h5 {
+        h2 {
             display: none;
         }
-
     `}
 
     /* Styles for medium screens */
     ${media.between("medium", "large")`
-        position: relative;
-        display: block;
-        background-color: transparent;
-        border: 3px solid #040f3d;
 
-            h5 {
-                display: block;
-                position: relative;
-                color: #040f3d;
-                width: 90%;
-                height: 90%;
-                margin: 0 auto;
-                text-align: center;
-            }
-        
-        :hover {
-            opacity: 0.5;
-        }
     `}
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
+        display: flex;
         position: relative;
-        display: block;
-        background-color: transparent;
-        border: 3px solid #040f3d;
-        height: 50px;
-        width: 100px;
+        justify-content: flex-end;
+        align-items: center;
+        height: 800px;
+        padding: 1em;
+        width: 50%;
+        background-color: white;
 
-            h5 {
-                display: block;
-                position: relative;
-                color: #040f3d;
-                width: 90%;
-                height: 90%;
-                margin: 0 auto;
-                text-align: center;
+            h2 {
+                postition: absolute;
+                margin-left: 1em;
+                font-size: 6em;
+                color: #4bffa5;
             }
-    
-        :hover {
-            opacity: 0.5;
-        }
+
     `}
 `;
 
-const HalfHalf = styled.div `
+const ContentContainer = styled.div `
     /* Styles for small screens */
     ${media.lessThan("medium")`
         position: relative;
-        height: 700px;
+        height: 100%;
         width: 100%;
         padding: 1em;
+        background-color: white;
 
         h3 {
             position: relative;
@@ -167,6 +168,20 @@ const HalfHalf = styled.div `
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
+        postition: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 5em;
+
+        h3 {
+            position: relative;
+            color: #040f3d;
+        }
+
+        p {
+            position: relative;
+        }
+
 
     `}
 
@@ -177,7 +192,12 @@ const Landing = () => (
 
 <LandingContainer>
 
-    <Slide left>
+    <WhiteHalf>
+        <Fade>
+            <h2>I'm</h2>
+        </Fade>
+    </WhiteHalf>
+
         <Half>
             <Fade left delay={400}>
                 <h2>I'm</h2>
@@ -187,15 +207,8 @@ const Landing = () => (
                 <h1>Zac.</h1>
             </Fade>
         </Half>
-    </Slide>
 
-    <Fade delay={1300}>
-        <Button>
-            <h5>go</h5>
-        </Button>
-    </Fade>
-
-    <HalfHalf>
+    <ContentContainer>
         <Fade delay={3000}>
             <h3>I'm aspiring to be a Full-Stack Web Developer.</h3>
         </Fade>
@@ -216,8 +229,7 @@ const Landing = () => (
                 All while maintaning a fast, responsive and simple layout.
             </p>
         </Fade>
-
-    </HalfHalf>
+    </ContentContainer>
 
 </LandingContainer>
 
