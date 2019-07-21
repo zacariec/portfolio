@@ -167,7 +167,7 @@ const Github = () => (
 
             </p>
 
-            <GForm method="post" netlify-honeypot="bot-field" data-netlify="true">
+            <GForm id="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
                 <input type="hidden" name="bot-field" />
                 <label>
                     Name
