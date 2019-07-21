@@ -175,6 +175,7 @@ const ContentContainer = styled.div `
 
         h3 {
             position: relative;
+
             color: #040f3d;
         }
 

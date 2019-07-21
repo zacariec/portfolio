@@ -57,6 +57,11 @@ const GithubContainer = styled.div `
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
+        position: relative;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        padding: 1em;
 
     `}
 `
@@ -81,6 +86,29 @@ const GTitleContainer = styled.div `
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
+
+    `}
+`
+
+const GContentContainer = styled.div `
+
+    /* Styles for small screens */
+    ${media.lessThan("medium")`
+
+    `}
+
+    /* Styles for medium screens */
+    ${media.between("medium", "large")`
+
+    `}
+
+    /* Styles for large screens */
+    ${media.greaterThan("large")`
+        position: relative;
+        width: 100%;
+        padding: 5em;
+        display: flex;
+        flex-direction: column;
 
     `}
 `
@@ -110,7 +138,17 @@ const GIconContainer = styled.div `
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
+        position: relative;
+        width: 100%;
+        height: 170px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
 
+        img {
+            width: 150px;
+            height: 150px;
+        }
     `}
 `
 
@@ -137,35 +175,46 @@ const Github = () => (
 
     <Content>
         <GithubContainer>
-            <GTitleContainer>
-                <h3>Lets get to know me</h3>
-            </GTitleContainer>
-            <p>
-                Currently located in City Victoria, Australia. Looking to land my first Junior Web Development job. <br></br><br></br>
-            </p>
 
-            <GTitleContainer>
-                <h3>Github</h3>
-            </GTitleContainer>
+            <GContentContainer>
+                <GTitleContainer>
+                    <h3>Lets get to know me</h3>
+                </GTitleContainer>
+                <p>
+                    Currently located in City Victoria, Australia. Looking to land my first Junior Web Development job. <br></br><br></br>
+                </p>
+            </GContentContainer>
 
-            <p>
-                You can check out the code for this website and all my other projects at my <a href="https://github.com/GPudgima">Github</a>.
-            </p>
+
+            <GContentContainer>
+                <GTitleContainer>
+                    <h3>Github</h3>
+                </GTitleContainer>
+
+                <p>
+                    You can check out the code for this website and all my other projects at my <a href="https://github.com/GPudgima">Github</a>.
+                </p>
+            </GContentContainer>
+
             <GIconContainer>
                 <a href="https://github.com/GPudgima">
                     <img src={GIcon} alt=""/>
                 </a>
             </GIconContainer>
             
-            <GTitleContainer>
-                <h3>Get in touch</h3>
-            </GTitleContainer>
-            <p>
-                Think I'm the man for the job?<br></br>
-                Got any constructive criticism?<br></br>
-                Fill out the form below, lets get a coffee☕
 
-            </p>
+            <GContentContainer>
+                <GTitleContainer>
+                    <h3>Get in touch</h3>
+                </GTitleContainer>
+
+                <p>
+                    Think I'm the man for the job?<br></br>
+                    Got any constructive criticism?<br></br>
+                    Fill out the form below, lets get a coffee☕
+
+                </p>
+            </GContentContainer>
 
             <GForm id="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
                 <input type="hidden" name="bot-field" />
