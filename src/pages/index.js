@@ -9,7 +9,7 @@ import '../components/global.css'
 import Landing from '../components/Landing'
 import Github from '../components/Github'
 import BWith from '../components/BuiltWith'
-import Form from '../components/Gorm'
+import Form from '../components/Form'
 
 
 
