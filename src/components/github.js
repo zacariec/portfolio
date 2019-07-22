@@ -3,10 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
-import Slide  from 'react-reveal/Slide'
-import Fade from 'react-reveal/Fade'
-import Flash from 'react-reveal/Flash'
-
 import GIcon from '../images/git-icon.png'
 
 
@@ -52,7 +48,11 @@ const GithubContainer = styled.div `
 
     /* Styles for medium screens */
     ${media.between("medium", "large")`
-
+        position: relative;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        padding: 1em;
     `}
 
     /* Styles for large screens */
@@ -99,7 +99,11 @@ const GContentContainer = styled.div `
 
     /* Styles for medium screens */
     ${media.between("medium", "large")`
-
+        position: relative;
+        width: 100%;
+        padding: 5em;
+        display: flex;
+        flex-direction: column;
     `}
 
     /* Styles for large screens */
@@ -109,7 +113,6 @@ const GContentContainer = styled.div `
         padding: 5em;
         display: flex;
         flex-direction: column;
-
     `}
 `
 
@@ -133,7 +136,17 @@ const GIconContainer = styled.div `
 
     /* Styles for medium screens */
     ${media.between("medium", "large")`
+        position: relative;
+        width: 100%;
+        height: 170px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
 
+        img {
+            width: 100px;
+            height: 100px;
+        }
     `}
 
     /* Styles for large screens */
@@ -152,24 +165,7 @@ const GIconContainer = styled.div `
     `}
 `
 
-const GForm = styled.form`
 
-    /* Styles for small screens */
-    ${media.lessThan("medium")`
-        display: flex;
-        flex-direction: column;
-    `}
-
-    /* Styles for medium screens */
-    ${media.between("medium", "large")`
-
-    `}
-
-    /* Styles for large screens */
-    ${media.greaterThan("large")`
-
-    `}
-`
 
 const Github = () => (
 
@@ -183,10 +179,7 @@ const Github = () => (
                 <p>
                     Currently located in City Victoria, Australia. Looking to land my first Junior Web Development job. <br></br><br></br>
                 </p>
-            </GContentContainer>
 
-
-            <GContentContainer>
                 <GTitleContainer>
                     <h3>Github</h3>
                 </GTitleContainer>
@@ -201,46 +194,6 @@ const Github = () => (
                     <img src={GIcon} alt=""/>
                 </a>
             </GIconContainer>
-            
-
-            <GContentContainer>
-                <GTitleContainer>
-                    <h3>Get in touch</h3>
-                </GTitleContainer>
-
-                <p>
-                    Think I'm the man for the job?<br></br>
-                    Got any constructive criticism?<br></br>
-                    Fill out the form below, lets get a coffee☕
-
-                </p>
-            </GContentContainer>
-
-            <GForm id="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
-                <input type="hidden" name="bot-field" />
-                <label>
-                    Name
-                    <input type="text" name="name" id="name" placeholder="What's your name?"/>
-                </label>
-                
-                <label>
-                    Email
-                    <input type="email" name="email" id="email" />
-                </label>
-                
-                <label>
-                    Subject
-                    <input type="text" name="subject" id="subject" />
-                </label>
-
-                <label>
-                    Message
-                    <textarea name="message" id="message" rows="5" />
-                </label>
-
-                <button type="submit">Send</button>
-                <input type="reset" value="Clear" />
-            </GForm>
         </GithubContainer>
     </Content>
 )
