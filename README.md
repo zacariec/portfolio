@@ -13,5 +13,5 @@ To keep my code clean and responsive in a mobile first manner, I styled it with
 I'm completely new to the Web Dev game and as such decided to keep it simple and clean.
 I want to showcase my ability to use HTML, CSS & JavaScript and hope to use this as a platform to do so.
 
-### Deployed using netlify.
+### Deployed using:
 ![alt text](https://geared.app/wp-content/uploads/2019/02/netlify.svg)
