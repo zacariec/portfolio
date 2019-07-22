@@ -14,4 +14,4 @@ I'm completely new to the Web Dev game and as such decided to keep it simple and
 I want to showcase my ability to use HTML, CSS & JavaScript and hope to use this as a platform to do so.
 
 ### Deployed using netlify.
-!(https://geared.app/wp-content/uploads/2019/02/netlify.svg)
+![alt text](https://geared.app/wp-content/uploads/2019/02/netlify.svg)
