@@ -1,10 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import styled from 'styled-components'
 import media from 'styled-media-query'
-
-import Fade from 'react-reveal/Fade'
 
 import LIcon from '../images/love-icon.png'
 import GIcon from '../images/gatsby-icon.png'
@@ -19,7 +16,6 @@ const BWContainer = styled.div `
     	padding: .5em;
     	width: 100%;
     	height: 100%;
-    	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		background-color: white;
 
     	h6 {
@@ -30,7 +26,11 @@ const BWContainer = styled.div `
 
     /* Styles for medium screens */
     ${media.between("medium", "large")`
-
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em;
     `}
 
     /* Styles for large screens */
@@ -58,7 +58,11 @@ const TitleContainer = styled.div `
 
     /* Styles for medium screens */
     ${media.between("medium", "large")`
-
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
     `}
 
     /* Styles for large screens */
@@ -78,11 +82,17 @@ const IconContainer = styled.div `
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     `}
 
     /* Styles for medium screens */
     ${media.between("medium", "large")`
-
+        position: relative;
+        width: 100%;
+        display: grid;
+        padding: 1em;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     `}
 
     /* Styles for large screens */
@@ -104,11 +114,26 @@ const ColumnContainer = styled.div `
 		display: flex;
 		flex-direction: column;
 		text-align: center;
+
+        button {
+            background: transparent;
+            border: none;
+        }
     `}
 
     /* Styles for medium screens */
     ${media.between("medium", "large")`
+        position: relative;
+        display: flex;
+        margin: 1em;
+        flex-direction: column;
+        text-align: center;
 
+        button {
+            background: transparent;
+            cursor: pointer;
+            border: none;
+        }
     `}
 
     /* Styles for large screens */
@@ -118,6 +143,12 @@ const ColumnContainer = styled.div `
     	margin: 1em;
     	flex-direction: column;
     	text-align: center;
+
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
 
     	:hover {
     		transform: scale(1.2);
@@ -136,14 +167,15 @@ const BWIcon = styled.img `
 
     /* Styles for medium screens */
     ${media.between("medium", "large")`
-
+        width: 100px;
+        height: 100px;
     `}
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
     	position: relative;
     	width: 150px;
-    	height: 1t50px;
+    	height: 150px;
 
     `}
 `
@@ -180,10 +212,10 @@ const BuiltWith = () => (
 
 
     			<ColumnContainer className="grid-fix">
-    				<a href="#">
+    				<button>
 					<BWIcon src={LIcon} alt=""/>
 					<h6>Love</h6>
-					</a>
+					</button>
 				</ColumnContainer>
 
 		</IconContainer>
