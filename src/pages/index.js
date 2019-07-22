@@ -6,10 +6,10 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import '../components/global.css'
 
-import Landing from '../components/landing'
-import Github from '../components/github'
-import BWith from '../components/builtwith'
-import Form from '../components/form'
+import Landing from '../components/Landing'
+import Github from '../components/Github'
+import BWith from '../components/BuiltWith'
+import Form from '../components/Gorm'
 
 
 
