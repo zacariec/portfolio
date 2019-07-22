@@ -1,17 +1,17 @@
 import React from "react"
 
-import { Link } from 'gatsby'
-
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import styled from 'styled-components' 
 import media from 'styled-media-query'
-import css from '../components/global.css'
+import '../components/global.css'
 
 import Landing from '../components/landing'
 import Github from '../components/github'
 import BWith from '../components/builtwith'
-import SEO from "../components/seo"
+import Form from '../components/form'
+
+
 
 
 const Contact = styled.div `
@@ -58,8 +58,11 @@ const IndexPage = () => (
 		</ul>
 	</Contact>
     <Landing />
+
     <BWith />
+
     <Github />
+    <Form />
 
 </div>
 )
