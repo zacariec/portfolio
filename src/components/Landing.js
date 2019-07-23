@@ -3,6 +3,55 @@ import React from "react"
 import styled from 'styled-components' 
 import media from 'styled-media-query'
 
+import Fade from 'react-reveal/Fade'
+
+const Landing = () => (
+
+<LandingContainer>
+
+    <WhiteHalf>
+        <Fade>
+            <h2>I'm</h2>
+        </Fade>
+    </WhiteHalf>
+
+        <Half>
+            <Fade left delay={400}>
+                <h2>I'm</h2>
+            </Fade>
+
+            <Fade right delay={600}>
+                <h1>Zac.</h1>
+            </Fade>
+        </Half>
+
+    <ContentContainer>
+        <Fade delay={2000}>
+            <h3>I'm aspiring to be a Full-Stack Web Developer.</h3>
+        </Fade>
+        <Fade delay={2500}>
+            <p>
+                I started my Web Development journey towards the end of 2018 and have continued to love it ever since.
+                Starting off with basic HTML and CSS, than moving to JavaScript, jQuery and a plethora of different frameworks.
+            </p>
+        </Fade>
+
+        <Fade delay={3400}>
+        <h3>Keep it simple and keep it responsive.</h3>
+        </Fade>
+        <Fade delay={3800}>
+            <p>
+                I decided to build my portfolio using <a href="https://gatsbyjs.org">GatsbyJS</a>.<br></br>
+                Allowing me to implement and leverage the powers of <a href="https://reactjs.org">ReactJS</a> and other great packages. <br></br><br></br>
+                All while maintaning a fast, responsive and simple layout.
+            </p>
+        </Fade>
+    </ContentContainer>
+
+</LandingContainer>
+
+)
+
 const LandingContainer = styled.div `
 
     /* Styles for small screens */
@@ -10,7 +59,6 @@ const LandingContainer = styled.div `
         position: relative;
         height: 100%;
         width: 100%;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     `}
 
     /* Styles for medium screens */
@@ -219,35 +267,5 @@ const ContentContainer = styled.div `
         }
     `}
 `
-
-const Landing = () => (
-
-<LandingContainer>
-    <WhiteHalf>
-            <h2>I'm</h2>
-    </WhiteHalf>
-        <Half>
-                <h2>I'm</h2>
-                <h1>Zac.</h1>
-        </Half>
-    <ContentContainer>
-            <h3>I'm aspiring to be a Full-Stack Web Developer.</h3>
-            <p>
-                I started my Web Development journey towards the end of 2018 and have continued to love it ever since.
-                Starting off with basic HTML and CSS, than moving to JavaScript, jQuery and a plethora of different frameworks.
-            </p>
-
-
-        <h3>Keep it simple and keep it responsive.</h3>
-    
-            <p>
-                I decided to build my portfolio using <a href="https://gatsbyjs.org">GatsbyJS</a>.<br></br>
-                Allowing me to implement and leverage the powers of <a href="https://reactjs.org">ReactJS</a> and other great packages. <br></br><br></br>
-                All while maintaning a fast, responsive and simple layout.
-            </p>
-    </ContentContainer>
-</LandingContainer>
-
-)
 
 export default Landing;
