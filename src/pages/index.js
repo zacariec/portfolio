@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 
 import styled from 'styled-components' 
 import media from 'styled-media-query'
-import '../components/global.css'
+import '../components/Global.css'
 
 import Landing from '../components/Landing'
 import Github from '../components/Github'
