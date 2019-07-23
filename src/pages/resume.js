@@ -436,7 +436,10 @@ const Skills = styled.div`
     ${media.greaterThan("large")`
 		position: relative;
 		padding-left: 2em;
-		list-style: circle inside;
+
+			ul {
+				list-style: circle inside;
+			}
     `}
 `
 
