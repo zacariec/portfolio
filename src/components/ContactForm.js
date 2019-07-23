@@ -3,7 +3,37 @@ import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
+const Form = () => (
 
+
+		<Container>
+			<div>
+				<h3>Get in touch.</h3>
+            </div>
+
+            	<GForm id="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
+                	<input type="hidden" name="bot-field" />
+                
+                    	<NameLabel>
+                        	Name
+                        	<input type="text" name="name" id="name" placeholder="What's your name?"/>
+                    	</NameLabel>
+
+                	    <EmailLabel>
+                    	    Email
+                        	<input type="email" name="email" id="email" placeholder="Enter your email address." />
+                    	</EmailLabel>
+
+                    	<MessageArea>
+                        	Message
+                        	<textarea name="message" id="message" rows="5" placeholder="Let's chat..."/>
+                    	</MessageArea>
+
+
+                	<Button type="submit"><h6>Send</h6></Button>
+            	</GForm>
+		</Container>
+)
 const Container = styled.div`
 	${media.lessThan("medium")`
 		position: relative;
@@ -346,43 +376,5 @@ const Button = styled.button`
 
 `
 
-
-const Form = () => (
-
-
-		<Container>
-			<div>
-				<h3>Get in touch.</h3>
-			    <p>
-                    Think I'm the man for the job?<br></br>
-                    Got any constructive criticism?<br></br>
-                    Fill out the form below, lets get a coffee☕
-                </p>
-            </div>
-
-            	<GForm id="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
-                	<input type="hidden" name="bot-field" />
-                
-                    	<NameLabel>
-                        	Name
-                        	<input type="text" name="name" id="name" placeholder="What's your name?"/>
-                    	</NameLabel>
-
-                	    <EmailLabel>
-                    	    Email
-                        	<input type="email" name="email" id="email" placeholder="Enter your email address." />
-                    	</EmailLabel>
-
-                    	<MessageArea>
-                        	Message
-                        	<textarea name="message" id="message" rows="5" placeholder="How about let's meet for coffee?☕"/>
-                    	</MessageArea>
-
-
-                	<Button type="submit"><h6>Send</h6></Button>
-            	</GForm>
-		</Container>
-
-)
 
 export default Form
