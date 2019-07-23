@@ -3,25 +3,64 @@ import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
-import LIcon from '../images/love-icon.png'
 import GIcon from '../images/gatsby-icon.png'
 import RIcon from '../images/react-icon.png'
 import SIcon from '../images/nails-icon.png'
 
+const BuiltWith = () => (
+    <BWContainer>
+    	<TitleContainer>
+			<h3>Peek behind the curtain</h3>
+    	</TitleContainer>
+        <p>
+            I made this site using:
+        </p>
+    	<IconContainer>
+
+    			<ColumnContainer>
+    				<a href="https://styled-components.com">
+						<BWIcon src={SIcon} alt=""/>
+					</a>
+					<h6>Styled<br/>Components</h6>
+				</ColumnContainer>
+
+    			<ColumnContainer>
+    				<a href="https://gatsbyjs.org">
+						<BWIcon src={GIcon} alt=""/>
+					</a>
+					<h6>Gatsby</h6>
+				</ColumnContainer>
+
+    			<ColumnContainer>
+    				<a href="https://reactjs.org">
+						<BWIcon src={RIcon} alt=""/>
+					</a>
+					<h6>React</h6>
+				</ColumnContainer>
+		</IconContainer>
+    </BWContainer>
+)
+
 const BWContainer = styled.div `
     /* Styles for small screens */
     ${media.lessThan("medium")`
-    	position: relative;
-    	display: block;
-    	padding: .5em;
-    	width: 100%;
-    	height: 100%;
-		background-color: white;
+        position: relative;
+        display: block;
+        padding: .5em;
+        width: 100%;
+        height: 100%;
+        background-color: white;
 
-    	h6 {
-    		color: #040f3d;
-    		text-transform: uppercase;
-    	}
+        h6 {
+            color: #040f3d;
+            text-transform: uppercase;
+        }
+
+        p {
+            position: relative;
+            bottom: .5em;
+            text-align: center;
+        }
     `}
 
     /* Styles for medium screens */
@@ -31,15 +70,28 @@ const BWContainer = styled.div `
         flex-direction: column;
         justify-content: center;
         padding: 1em;
+        
+            p {
+                position: relative;
+                text-align: center;
+                bottom: 1em;
+            }
+
     `}
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
-    	position: relative;
-    	display: flex;
-    	flex-direction: column;
-    	justify-content: center;
-    	padding: 1em;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em;
+
+            p {
+                position: relative;
+                text-align: center;
+                bottom: 1em;
+            }
 
     `}
 `
@@ -47,13 +99,13 @@ const BWContainer = styled.div `
 const TitleContainer = styled.div `
     /* Styles for small screens */
     ${media.lessThan("medium")`
-    	display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 50px;
-		color: #040f3d;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        color: #040f3d;
     `}
 
     /* Styles for medium screens */
@@ -67,22 +119,21 @@ const TitleContainer = styled.div `
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
-    	position: relative;
-    	display: flex;
-    	width: 100%;
-    	flex-direction: row;
-    	justify-content: center;
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
     `}
 `
 const IconContainer = styled.div `
     /* Styles for small screens */
     ${media.lessThan("medium")`
-    	position: relative;
-    	width: 100%;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
     `}
 
     /* Styles for medium screens */
@@ -92,28 +143,28 @@ const IconContainer = styled.div `
         display: grid;
         padding: 1em;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr;
     `}
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
-    	position: relative;
-    	width: 100%;
-  		display: grid;
-  		padding: 1em;
-  		grid-template-columns: 1fr 1fr 1fr;
-  		grid-template-rows: 1fr 1fr;
+        position: relative;
+        width: 100%;
+        display: grid;
+        padding: 1em;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
     `}
 `
 
 const ColumnContainer = styled.div `
     /* Styles for small screens */
     ${media.lessThan("medium")`
-    	position: relative;
-    	margin: 1em;
-		display: flex;
-		flex-direction: column;
-		text-align: center;
+        position: relative;
+        margin: 1em;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
 
         button {
             background: transparent;
@@ -138,11 +189,11 @@ const ColumnContainer = styled.div `
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
-    	position: relative;
-    	display: flex;
-    	margin: 1em;
-    	flex-direction: column;
-    	text-align: center;
+        position: relative;
+        display: flex;
+        margin: 1em;
+        flex-direction: column;
+        text-align: center;
 
         button {
             background: transparent;
@@ -150,19 +201,19 @@ const ColumnContainer = styled.div `
             cursor: pointer;
         }
 
-    	:hover {
-    		transform: scale(1.2);
-    		opacity: 0.8;
-    	}
+        :hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
     `}
 `
 
 const BWIcon = styled.img `
     /* Styles for small screens */
     ${media.lessThan("medium")`
-    	position: relative;
-		width: 60px;
-		height: 60px;
+        position: relative;
+        width: 60px;
+        height: 60px;
     `}
 
     /* Styles for medium screens */
@@ -173,54 +224,12 @@ const BWIcon = styled.img `
 
     /* Styles for large screens */
     ${media.greaterThan("large")`
-    	position: relative;
-    	width: 150px;
-    	height: 150px;
+        position: relative;
+        width: 150px;
+        height: 150px;
 
     `}
 `
 
-
-
-const BuiltWith = () => (
-    <BWContainer>
-    	<TitleContainer>
-			<h3>Peek behind the curtain</h3>
-    	</TitleContainer>
-
-    	<IconContainer>
-    			<ColumnContainer>
-    				<a href="https://styled-components.com">
-						<BWIcon src={SIcon} alt=""/>
-					</a>
-					<h6>Styled<br/>Components</h6>
-				</ColumnContainer>
-
-    			<ColumnContainer>
-    				<a href="https://gatsbyjs.org">
-						<BWIcon src={GIcon} alt=""/>
-					</a>
-					<h6>Gatsby</h6>
-				</ColumnContainer>
-
-    			<ColumnContainer>
-    				<a href="https://reactjs.org">
-						<BWIcon src={RIcon} alt=""/>
-					</a>
-					<h6>React</h6>
-				</ColumnContainer>
-
-
-    			<ColumnContainer className="grid-fix">
-    				<button>
-					<BWIcon src={LIcon} alt=""/>
-					<h6>Love</h6>
-					</button>
-				</ColumnContainer>
-
-		</IconContainer>
-    </BWContainer>
-
-)
 
 export default BuiltWith
